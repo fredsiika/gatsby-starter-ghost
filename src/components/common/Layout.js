@@ -54,10 +54,14 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                             </div>
                             { isHome ?
                                 <div className="site-banner">
+                                    <h1 className="site-banner-title">Stone Countertop Specialists<br /><small style={{ color: '#5B7A81' }}>Find premium stone and tile to match your lifestyle.</small></h1>
+                                    <p className="site-banner-desc">We distribute, fabricate and install countertops in Dallas/Fort-Worth and surrounding areas.</p>
+                                </div> :
+                                <div className="site-banner">
                                     <h1 className="site-banner-title">{site.title}</h1>
                                     <p className="site-banner-desc">{site.description}</p>
-                                </div> :
-                                null}
+                                </div>
+                            }
                             <nav className="site-nav">
                                 <div className="site-nav-left">
                                     {/* The navigation items as setup in Ghost */}
@@ -82,10 +86,19 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                     <footer className="site-foot">
                         <div className="site-foot-nav container">
                             <div className="site-foot-nav-left">
-                                <Link to="/">{site.title}</Link> © 2019 &mdash; Published with <a className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer">Ghost</a>
+                                <Link to="/">{site.title}</Link> © 2020
+                                    <span className="copyright"> &#124; </span><br className=""/>
+                                    <span className="site-footer-nav">{site.description}</span><br />
                             </div>
+
                             <div className="site-foot-nav-right">
                                 <Navigation data={site.navigation} navClass="site-foot-nav-item" />
+                            </div>
+
+                        </div>
+                        <div className="site-foot-nav container-fluid">
+                            <div className="site-foot-nav-middle">
+                                <p className="credits">Made with <span>💟</span> and <span>☕</span> <a className="site-foot-nav-item" href="https://github.com/fredsiika" target="_blank" rel="noopener noreferrer">Fred Siika</a></p>
                             </div>
                         </div>
                     </footer>
